@@ -20,13 +20,20 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-    - name: Run Echo Command 1
-      run: echo "Hello World 1"
+    - name: Run Echo Command Test
+      run: echo "Hello World Test"
+  prod:
+    name: Prod
+    environment: PROD
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Echo Command Prod
+      run: echo "Hello World Prod"
   deploy:
     name: Deploy
     environment: PROD
     runs-on: ubuntu-latest
     steps:
-    - name: Run Echo Command 2
-      run: echo "Hello World 2"
+    - name: Run Echo Command Deploy
+      run: echo "Hello World Deploy"
       
