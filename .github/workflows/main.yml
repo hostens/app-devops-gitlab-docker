@@ -1,0 +1,26 @@
+on: [push]
+
+jobs:
+  change:
+    name: Change
+    runs-on: ubuntu-latest
+    steps:
+    - name: ServiceNow DevOps Change Automation
+      uses: ServiceNow/servicenow-devops-change@v6.3.0
+      with:
+        instance-url: ${{ secrets.SNOW_INSTANCE }}
+        devops-integration-user-name: ${{ secrets.SNOW_USER }}
+        devops-integration-user-password: ${{ secrets.SNOW_PASSWORD }}
+        tool-id: ${{ secrets.SNOW_TOOL_ID }}
+        job-name: Deploy to production
+        context-github: ${{ toJSON(github) }}
+        change-request: '{"setCloseCode": true, "attributes": {"category": "DevOps", "short_description": "Automated Software Deployment using Github!!!", "description": "Automated Software Deployment!!!!", "software_model": "5e7ee86387e152103d95eac73cbb3514"}}'
+        deployment-gate: '{"environment": "PROD", "jobName": "Deploy"}'
+  deploy:
+    name: Deploy
+    environment: PROD
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Echo Command
+      run: echo "Hello World"
+      
