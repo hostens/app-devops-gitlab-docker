@@ -22,19 +22,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run Echo Command Test
-      run: echo "Hello World Test"
+      run: echo "Hello World Test!"
   prod:
     name: Prod
     environment: PROD
     runs-on: ubuntu-latest
     steps:
     - name: Run Echo Command Prod
-      run: echo "Hello World Prod"
+      run: echo "Hello World Prod!"
   deploy:
     name: Deploy
     environment: PROD
     runs-on: ubuntu-latest
     steps:
     - name: Run Echo Command Deploy
-      run: echo "Hello World Deploy"
+      run: echo "Hello World Deploy!"
       
