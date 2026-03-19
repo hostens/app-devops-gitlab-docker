@@ -18,6 +18,7 @@ jobs:
         deployment-gate: '{"environment": "PROD", "jobName": "Deploy"}'
   test:
     name: Test
+    environment: TEST
     runs-on: ubuntu-latest
     steps:
     - name: Run Echo Command Test
