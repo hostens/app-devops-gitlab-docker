@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run Echo Command Test
-      run: echo "Hello World Test!!"
+      run: echo "Hello World Test!!!"
   prod:
     name: Prod
     environment: PROD
